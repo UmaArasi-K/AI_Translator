@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Translator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      .text-book {
+        width: 50%;
+        padding: 2rem;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .text-book h1 {
+        font-weight: bold;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .text-book p {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .text-book button {
+        font-size: 2.2rem;
+        padding: 0.5rem 2rem;
+        border: none;
+        border-radius: 4px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .text-book button:hover {
+        background-color: #555;
+      }
+
+      .form-container {
+        margin: 0 auto;
+        width: 50%;
+        height: 90%;
+        padding: 2rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .form-container h1 {
+        font-weight: bold;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .form-container p {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .form-container label {
+        font-weight: bold;
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-container select,
+      .form-container input[type="file"] {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      .form-container input[type="submit"] {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-book">
+      <h1>TEXT BOOK:</h1>
+      <p>Tamil</p>
+      <p>Drag and drop or Upload document</p>
+      <input type="file" id="document-file" accept=".txt, .pdf, .docx" />
+      <button>CONVERT</button>
+    </div>
+    <div class="form-container">
+      <h1>Edu-Al Translator</h1>
+      <p>Select Document Type:</p>
+      <select id="document-type">
+        <option value="text-book">Text Book</option>
+        <option value="research-paper">Research Paper</option>
+        <option value="online-course">Online Course</option>
+      </select>
+      <p>Select Source Language:</p>
+      <select id="source-language">
+        <option value="english">English</option>
+        <option value="tamil">Tamil</option>
+      </select>
+      <p>Select Target Language:</p>
+      <select id="target-language">
+        <option value="english">English</option>
+        <option value="tamil">Tamil</option>
+      </select>
+      <p>
+        <input type="file" id="document-file" accept=".txt, .pdf, .docx" />
+      </p>
+      <input type="submit" value="Translate" /><br />
+      <br />
+      <br />
+      <a
+        href="../html/index.html"
+        style="text-decoration: none"
+        style="color: gray"
+        ><h1>Home</h1></a
+      >
+    </div>
+  </body>
+</html>

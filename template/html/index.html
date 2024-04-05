@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translator</title>
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <h1>Welcome to Translator</h1>
+      </div>
+      <div class="auth-box">
+        <div class="toggle-buttons">
+          <a href="../html/login.html"
+            ><button class="toggle-btn active" id="loginBtn">Login</button></a
+          >
+          <a href="../html/register.html"
+            ><button class="toggle-btn" id="registerBtn">Register</button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <body>
+      <div class="header">
+        <h1>Edu-Al Translator 4</h1>
+      </div>
+      <div class="containers">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/your-video-id-here"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <div class="video-title">Video on how to use EDU-AI Translator</div>
+        </div>
+        <ul>
+          <li>
+            <a href="video_tutorial.html"
+              >Video on how to use Edu-Al Translator 4</a
+            >
+          </li>
+
+          <li><a href="../html/index1.html">Text Book</a></li>
+
+          <li><a href="../html/index1.html">Research Paper</a></li>
+          <li><a href="../html/index1.html">Online Course</a></li>
+        </ul>
+      </div>
+    </body>
+
+    <script>
+      const loginBtn = document.getElementById("loginBtn");
+      const registerBtn = document.getElementById("registerBtn");
+      const loginForm = document.querySelector(".login-form");
+      const registerForm = document.querySelector(".register-form");
+
+      loginBtn.addEventListener("click", () => {
+        loginBtn.classList.add("active");
+        registerBtn.classList.remove("active");
+        loginForm.style.display = "block";
+        registerForm.style.display = "none";
+      });
+
+      registerBtn.addEventListener("click", () => {
+        registerBtn.classList.add("active");
+        loginBtn.classList.remove("active");
+        registerForm.style.display = "block";
+        loginForm.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
