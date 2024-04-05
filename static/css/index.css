@@ -10,7 +10,7 @@ body {
   background-color: #4da6ff;
   color: white;
   padding: 10px;
-  margin-bottom: 120px;
+  margin-bottom: 50px;
 }
 
 .container {
@@ -61,27 +61,34 @@ body {
   margin: 0 auto;
   padding: 0 80px;
 }
-
 .video-container {
-  width: 100%; /* Take full width on small screens */
+  width: 100%;
+  /* Add box around video container */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  padding: 60px; /* Add padding inside the container */
+  margin-bottom: 20px; /* Add margin to separate from other elements */
   animation: fly-in 1s ease-out forwards;
 }
-
 .button-box {
   width: 100%; /* Take full width on small screens */
-  padding-left: 190px; /* Add margin between video and buttons */
+  margin-top: 80px;
+  padding-left: 140px; /* Add margin between video and buttons */
+  animation: fly-in 1s ease-out forwards; /* Add animation to the button box */
 }
 
 button {
   width: 100%; /* Take full width on small screens */
-  padding: 50px 30px;
+  padding: 40px 20px;
+  margin-bottom: 20px;
   cursor: pointer;
   background-color: #f1f1f1;
   border: none;
   border-radius: 10px;
   max-width: 350px;
   font-size: 30px;
-  margin-top: 10px;
+  animation: fly-in 1s ease-out forwards; /* Add animation to the buttons */
 }
 
 button:hover {
@@ -134,6 +141,7 @@ ul {
 
 li {
   margin: 10px;
+  float: left;
 }
 
 a {
