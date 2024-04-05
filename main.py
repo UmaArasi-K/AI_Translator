@@ -10,3 +10,4 @@ async def read_root():
     return FileResponse("template/html/index.html")
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/template", StaticFiles(directory="template"), name="template")
