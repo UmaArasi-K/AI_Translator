@@ -2,12 +2,12 @@ body {
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f9ff;
+  background-color: rgb(160, 160, 160);
 }
 .navbar {
   display: flex;
   flex-direction: column; /* Stack items vertically on small screens */
-  background-color: #4da6ff;
+  background-color: rgb(88, 88, 88);
   color: white;
   padding: 10px;
   margin-bottom: 50px;
@@ -17,19 +17,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .container h1 {
-  margin: 0;
-  font-size: 24px;
+  padding: 10%;
   white-space: nowrap;
-
 }
 
 .auth-box {
   display: flex;
   align-items: center;
+  padding-right: 5%;
+  padding-top: 2%;
 }
 
 .toggle-buttons {
@@ -50,7 +49,7 @@ body {
 }
 
 .toggle-btn.active {
-  background-color: #007bff;
+  background-color: #2f2f2f;
   color: white;
 }
 .containers {
@@ -63,10 +62,11 @@ body {
 }
 .video-container {
   width: 100%;
+  color: #3e3e3e;
   /* Add box around video container */
   border: 1px solid #ccc;
   border-radius: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.1); /* Add box shadow */
   padding: 60px; /* Add padding inside the container */
   margin-bottom: 20px; /* Add margin to separate from other elements */
   animation: fly-in 1s ease-out forwards;
@@ -101,6 +101,7 @@ button:active {
 
 .steps {
   margin-top: 20px;
+  color: #2f2f2f;
   width: 100%; /* Take full width on small screens */
   text-align: center; /* Center steps text */
 }
@@ -146,11 +147,11 @@ li {
 
 a {
   text-decoration: none;
-  color: #007bff;
+  color: #37373700;
 }
 
 a:hover {
-  color: #0056b3;
+  color: #37373700;
 }
 
 @media screen and (min-width: 768px) {
@@ -191,8 +192,11 @@ a:hover {
 
   .button-box {
     width: 30%;
-    margin-top: 0; 
+    margin-top: 0;
     margin-left: 20px; /* Add margin between video and buttons */
     /* Reset margin on large screens */
+  }
+  .button-box h2 {
+    color: #2f2f2f;
   }
 }
