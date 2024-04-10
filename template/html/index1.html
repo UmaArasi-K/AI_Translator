@@ -1,135 +1,149 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Translator</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: rgb(160, 160, 160);
-      }
+        /* Contact section */
+        .content-header{
+          font-family: 'Oleo Script', cursive;
+          color:#fcc500;
+          font-size: 45px;
+        }
 
-      .text-book {
-        width: 50%;
-        padding: 2rem;
-        background-color: rgb(160, 160, 160);
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
+        .section-content{
+          text-align: center; 
+        }
 
-      .text-book h1 {
-        font-weight: bold;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
+        select {
+          color: initial !important;
+        }
 
-      .text-book p {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
+        #contact{
+            font-family: 'Teko', sans-serif;
+            padding-top: 60px;
+            width: 100%;
+            width: 100vw;
+            min-height: 100vh; /* changed to ensure page takes full height */
+            background: #3a6186; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            color: #fff;    
+        }
 
-      .text-book button {
-        font-size: 2.2rem;
-        padding: 0.5rem 2rem;
-        border: none;
-        border-radius: 4px;
-        background-color: #333;
-        color: #fff;
-        cursor: pointer;
-      }
+        .contact-section{
+          padding-top: 40px;
+        }
 
-      .text-book button:hover {
-        background-color: #555;
-      }
+        .container {
+            width: 90%; /* changed for better responsiveness */
+            max-width: 600px; /* added for better responsiveness */
+            margin: 0 auto; /* centered container */
+            padding: 2rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-      .form-container {
-        margin: 0 auto;
-        width: 50%;
-        height: 90%;
-        padding: 2rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+        .container h1 {
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
 
-      .form-container h1 {
-        font-weight: bold;
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
+        .container p {
+            font-size: 1.6rem; /* changed for better readability */
+            margin-bottom: 2rem;
+        }
 
-      .form-container p {
-        font-size: 2.2rem;
-        margin-bottom: 2rem;
-      }
+        .container label {
+            font-size: 1.6rem; /* changed for better readability */
+            display: block;
+            margin-bottom: 1.5rem;
+        }
 
-      .form-container label {
-        font-weight: bold;
-        font-size: 2.5rem;
-        display: block;
-        margin-bottom: 1.5rem;
-      }
+        .container select,
+        .container input[type="file"] {
+            width: 100%;
+            padding: 0.8rem; /* adjusted for better input experience */
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 1.6rem; /* changed for better readability */
+            margin-bottom: 1rem; /* added for better spacing */
+        }
 
-      .form-container select,
-      .form-container input[type="file"] {
-        width: 100%;
-        padding: 0.5rem;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-      }
+        .container input[type="submit"] {
+            font-size: 1.6rem; /* changed for better readability */
+            padding: 0.8rem 2rem; /* adjusted for better button size */
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s; /* added for hover effect */
+        }
 
-      .form-container input[type="submit"] {
-        margin-top: 1rem;
-      }
+        .container input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .select-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%; /* adjusted for better responsiveness on smaller screens */
+            }
+        }
     </style>
-  </head>
-  <body>
-    <div class="text-book">
-      <h1>TEXT BOOK:</h1>
-      <p>Tamil</p>
-      <p>Drag and drop or Upload document</p>
-      <input type="file" id="document-file" accept=".txt, .pdf, .docx" />
-      <button>CONVERT</button>
+</head>
+<body>
+<section id="contact">
+    <div class="section-content">
+        <h1 class="section-header"> <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Translate</span> your text</h1>
+        <h3>Write and click <b>TRANSLATE</b></h3>
     </div>
-    <div class="form-container">
-      <h1>Edu-Al Translator</h1>
-      <p>Select Document Type:</p>
-      <select id="document-type">
-        <option value="text-book">Text Book</option>
-        <option value="research-paper">Research Paper</option>
-        <option value="online-course">Online Course</option>
-      </select>
-      <p>Select Source Language:</p>
-      <select id="source-language">
-        <option value="english">English</option>
-        <option value="tamil">Tamil</option>
-      </select>
-      <p>Select Target Language:</p>
-      <select id="target-language">
-        <option value="english">English</option>
-        <option value="tamil">Tamil</option>
-      </select>
-      <p>
-        <input type="file" id="document-file" accept=".txt, .pdf, .docx" />
-      </p>
-      <input type="submit" value="Translate" /><br />
-      <br />
-      <br />
-      <a
-        href="../html/index.html"
-        style="text-decoration: none"
-        style="color: gray"
-        ><h1>Home</h1></a
-      >
+    <div class="contact-section">
+        <div class="container">
+            <h1>Edu-Al Translator</h1>
+            <p>Select Document Type:</p>
+            <select id="document-type">
+                <option value="text-book">Text Book</option>
+                <option value="research-paper">Research Paper</option>
+                <option value="online-course">Online Course</option>
+            </select>
+            <div class="select-container">
+                <div>
+                    <label for="source-language">Select Source Language:</label>
+                    <select id="source-language">
+                        <option value="en">English</option>
+                        <option value="ta">Tamil</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="target-language">Select Target Language:</label>
+                    <select id="target-language">
+                        <option value="en">English</option>
+                        <option value="ta">Tamil</option>
+                    </select>
+                </div>
+            </div>
+            <p>
+                <input type="file" id="document-file" accept=".txt, .pdf, .docx" />
+            </p>
+            <input type="submit" value="Translate" /><br />
+            <br />
+            <br />
+            <a href="#" style="text-decoration: none; color: gray;"><h1>Home</h1></a>
+        </div>
     </div>
-  </body>
+</section>
+</body>
 </html>
