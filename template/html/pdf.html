@@ -113,37 +113,47 @@
     <div class="contact-section">
         <div class="container">
             <h1>Edu-Al Translator</h1>
-            <p>Select Document Type:</p>
-            <select id="document-type">
-                <option value="text-book">Text Book</option>
-                <option value="research-paper">Research Paper</option>
-                <option value="online-course">Online Course</option>
-            </select>
-            <div class="select-container">
-                <div>
-                    <label for="source-language">Select Source Language:</label>
-                    <select id="source-language">
-                        <option value="en">English</option>
-                        <option value="ta">Tamil</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="target-language">Select Target Language:</label>
-                    <select id="target-language">
-                        <option value="en">English</option>
-                        <option value="ta">Tamil</option>
-                    </select>
-                </div>
-            </div>
-            <p>
-                <input type="file" id="document-file" accept=".txt, .pdf, .docx" />
-            </p>
-            <input type="submit" value="Translate" /><br />
-            <br />
-            <br />
-            <a href="#" style="text-decoration: none; color: gray;"><h1>Home</h1></a>
+            <form id="translation-form" action="/uploadpdf/" method="post" enctype="multipart/form-data">
+                <p>Select PDF file:</p>
+                <input type="file" name="file" id="file" accept=".pdf" required><br><br>
+                <p>Select Source Language:</p>
+                <select name="source_language" id="source-language">
+                    <option value="eng_Latn">English</option>
+                    <option value="ta">Tamil</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="mr">Marathi</option>
+                    <option value="te">Telugu</option>
+                    <option value="kn">Kannada</option>
+                </select><br><br>
+                <p>Select Target Language:</p>
+                <select name="target_language" id="target-language">
+                    <option value="en">English</option>
+                    <option value="tam_Taml">Tamil</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="mr">Marathi</option>
+                    <option value="te">Telugu</option>
+                    <option value="kn">Kannada</option>
+                </select><br><br>
+                <input type="hidden" name="output_dir" id="output-dir" value="/downloads">
+                <input type="submit" id="translate-btn" value="Translate">
+            </form>
+            <br>
+            <br>
+            <br>
+            <a href="/" style="text-decoration: none; color: gray;"><h1>Home</h1></a>
         </div>
     </div>
 </section>
+<script>
+    // Add event listener for form submission
+    document.getElementById("translation-form").addEventListener("submit", function(event) {
+        // Disable translate button to prevent multiple submissions
+        document.getElementById("translate-btn").disabled = true;
+        // Show processing message
+        alert("Translation in progress...");
+    });
+</script>
 </body>
 </html>
