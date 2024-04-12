@@ -31,11 +31,11 @@ async def upload_pdf_and_translate(
     with open(file_path, "wb") as f:
         f.write(await file.read())
 
-    # Output PDF path in the "Downloads" directory
-    output_path = os.path.join(output_dir, file.filename)
+    # # Output PDF path in the "Downloads" directory
+    # output_path = os.path.join(output_dir, file.filename)
 
     # Translate PDF
-    translate_pdf(file_path, output_path, source_language, target_language)
+    translate_pdf(file_path, source_language, target_language)
     return FileResponse('C:/Users/umaar/1.pdf')
      
 @app.get("/output1/{file_name}")

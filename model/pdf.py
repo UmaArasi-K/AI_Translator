@@ -22,7 +22,7 @@ def extract_text_from_pdf(pdf_path):
             text += page.extract_text()
     return text
 
-def write_translated_text_to_pdf(translated_text, output_path):
+def write_translated_text_to_pdf(translated_text):
     pdf = FPDF()
     pdf.add_page()
     try:
@@ -48,11 +48,11 @@ def write_translated_text_to_pdf(translated_text, output_path):
         # Check if the current line has filled the page width
         if pdf.get_y() > 270:  # Adjust the value based on your PDF margins
             pdf.add_page()  # Add a new page if the current page is filled
-    print("printing output",output_path)
+    print("printing output")
     # Output the PDF to the specified path
     pdf.output('C:/Users/umaar/1.pdf')
 
-def main(pdf_path, output_path, source_language, target_language):
+def main(pdf_path, source_language, target_language):
     # Extract text from PDF
     print("extracting text")
 
@@ -68,4 +68,4 @@ def main(pdf_path, output_path, source_language, target_language):
         translated_text.append(translated_sentence)
     print("pdf write")
     # Write translated text to PDF
-    write_translated_text_to_pdf(translated_text, output_path)
+    write_translated_text_to_pdf(translated_text)
