@@ -26,8 +26,8 @@ def write_translated_text_to_pdf(translated_text):
     pdf = FPDF()
     pdf.add_page()
     try:
-        pdf.add_font('NotoSansTamil-Black', '', 'C:/Users/umaar/NotoSansTamil-Black.ttf', uni=True)
-        pdf.set_font('NotoSansTamil-Black', size=12)
+        pdf.add_font('Nirmala', '', 'C:/Users/umaar/Nirmala.ttf', uni=True)
+        pdf.set_font('Nirmala', size=12)
     except Exception as pdfer:
         print("exception",pdfer)
     print("add and set font done")
@@ -35,7 +35,7 @@ def write_translated_text_to_pdf(translated_text):
         words = line.split()
         current_line = ''
         for word in words:
-            if pdf.get_string_width(current_line + ' ' + word) <= 2700:
+            if pdf.get_string_width(current_line + ' ' + word) <= 2500:
                 current_line += ' ' + word
             else:
                 # Add the line to PDF

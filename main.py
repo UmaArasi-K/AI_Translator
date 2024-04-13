@@ -3,6 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from starlette.responses import FileResponse
 from model.pdf import main as translate_pdf
 import os
+from model.vid import main as translate_vid
 
 app = FastAPI()
 @app.get("/")
@@ -22,7 +23,6 @@ async def upload_pdf_and_translate(
     file: UploadFile = File(...),
     source_language: str = Form(...),
     target_language: str = Form(...),
-    output_dir: str = Form(...),
 ):
     # Save the uploaded file to disk
     upload_dir = "uploads"
@@ -37,8 +37,30 @@ async def upload_pdf_and_translate(
     # Translate PDF
     translate_pdf(file_path, source_language, target_language)
     return FileResponse('C:/Users/umaar/1.pdf')
-     
-@app.get("/output1/{file_name}")
-async def download_output(file_name: str):
-    # Serve the output file for download
-    return FileResponse(file_name)
+
+
+@app.post("/uploadvid/")
+async def upload_video_and_translate(
+    file: UploadFile = File(...),
+    source_language: str = Form(...),
+    target_language: str = Form(...),
+):
+    print("got input")
+    # Save the uploaded file to disk
+    upload_dir = "uploads"
+    os.makedirs(upload_dir, exist_ok=True)
+    file_path = os.path.join(upload_dir, file.filename)
+    with open(file_path, "wb") as f:
+        f.write(await file.read())
+    print("file read")
+
+    # Translate video
+    a=translate_vid(file_path, source_language, target_language)
+    print(a)
+    # Return the translated video file as response
+    return FileResponse(a)
+
+# @app.get("/output1/{file_name}")
+# async def download_output(file_name: str):
+#     # Serve the output file for download
+#     return FileResponse(file_name)
